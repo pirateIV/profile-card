@@ -7,7 +7,7 @@ This project serves as my submission for **HNG Internship Stage 0**, demonstrati
 
 ## 🚀 Live Demo
 
-🔗 [**Live Site**](https://github.com/pirateIV/profile-card.git)
+🔗 [**Live Site**](https://pirateiv.github.io/profile-card/)
 _(Deployed via Github Pages)_
 
 ---
