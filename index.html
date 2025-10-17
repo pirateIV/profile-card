@@ -5,14 +5,6 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Benjamin Abolade - Frontend Developer</title>
 		<link rel="stylesheet" href="./style.css" />
-
-    <style>
-      .theme-switcher {
-        position: absolute;
-        top: 20px;
-        right: 20px;
-      }
-    </style>
 	</head>
 	<body>
 		<article class="profile-card" data-testid="test-profile-card">
@@ -97,6 +89,7 @@
 				<div class="theme-switcher">
 					<button id="theme-switcher">
 						<svg
+							class="moon-icon"
 							xmlns="http://www.w3.org/2000/svg"
 							width="20"
 							height="20"
@@ -111,6 +104,29 @@
 								d="M20.985 12.486a9 9 0 1 1-9.473-9.472c.405-.022.617.46.402.803a6 6 0 0 0 8.268 8.268c.344-.215.825-.004.803.401"
 							/>
 						</svg>
+
+						<svg
+							class="sun-icon"
+							xmlns="http://www.w3.org/2000/svg"
+							width="20"
+							height="20"
+							viewBox="0 0 24 24"
+							fill="none"
+							stroke="currentColor"
+							stroke-width="2"
+							stroke-linecap="round"
+							stroke-linejoin="round"
+						>
+							<circle cx="12" cy="12" r="4"></circle>
+							<path d="M12 2v2"></path>
+							<path d="M12 20v2"></path>
+							<path d="m4.93 4.93 1.41 1.41"></path>
+							<path d="m17.66 17.66 1.41 1.41"></path>
+							<path d="M2 12h2"></path>
+							<path d="M20 12h2"></path>
+							<path d="m6.34 17.66-1.41 1.41"></path>
+							<path d="m19.07 4.93-1.41 1.41"></path>
+						</svg>
 					</button>
 				</div>
 			</aside>
@@ -119,11 +135,28 @@
 			<main class="profile-content">
 				<!-- Bio Section -->
 				<section class="content-section">
-					<p class="profile-bio" data-testid="test-user-bio">
-						<b>Frontend developer</b> with a passion for creating accessible and responsive web
-						experiences. I enjoy solving complex problems and continuously learning new technologies to
-						improve my craft.
-					</p>
+					<div class="profile-bio" data-testid="test-user-bio">
+						<p>
+							I’m passionate about <b>learning and improvement</b>. Lately, I’ve been exploring
+							advanced React patterns, TypeScript for type-safe development, and web performance
+							optimization techniques. I also study web accessibility to make sure my projects are
+							inclusive and usable for all audiences.
+						</p>
+
+						<p>
+							Beyond the frontend, I enjoy expanding my understanding of
+							<b>full-stack JavaScript development</b>.I use Node.js, Express, and MongoDB to
+							build complete, data-driven applications. I value clarity, structure, and thoughtful
+							design systems that scale with projects over time.
+						</p>
+
+						<p>
+							My motivation comes from solving real problems with code and collaborating on projects
+							that blend <b>creativity and engineering</b>. Whether it’s creating interactive UIs,
+							optimizing app performance, or experimenting with new frameworks, I’m always looking for
+							ways to push the limits of what’s possible on the web.
+						</p>
+					</div>
 				</section>
 
 				<!-- Hobbies Section -->
