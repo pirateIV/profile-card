@@ -4,9 +4,37 @@
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Benjamin Abolade - Frontend Developer</title>
-		<link rel="stylesheet" href="./style.css" />
+
+		<link rel="preload" href="./css/fonts.css" as="style" />
+		<link rel="preload" href="./css/style.css" as="style" />
+
+    <link rel="stylesheet" href="./css/fonts.css" />
+    <link rel="stylesheet" href="./css/style.css" />  
+		<script type="speculationrules">
+			{
+				"prerender": [
+					{
+						"where": {
+							"href_matches": "/*"
+						},
+						"eagerness": "immediate"
+					}
+				]
+			}
+		</script>
 	</head>
 	<body>
+		<header>
+			<!-- Navigation -->
+			<nav>
+				<ul>
+					<li><a href="./index.html" aria-current="page">Home</a></li>
+					<li><a href="./pages/about.html">About Me</a></li>
+					<li><a href="./pages/contact.html">Contact Us</a></li>
+				</ul>
+			</nav>
+		</header>
+
 		<article class="profile-card" data-testid="test-profile-card">
 			<!-- Left Sidebar -->
 			<aside class="profile-sidebar">
@@ -14,6 +42,7 @@
 					<img
 						src="./images/avatar.jpg"
 						alt="Profile photo of Benjamin Abolade"
+						fetchpriority="high"
 						data-testid="test-user-avatar"
 					/>
 				</figure>
