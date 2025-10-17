@@ -5,6 +5,14 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Benjamin Abolade - Frontend Developer</title>
 		<link rel="stylesheet" href="./style.css" />
+
+    <style>
+      .theme-switcher {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+      }
+    </style>
 	</head>
 	<body>
 		<article class="profile-card" data-testid="test-profile-card">
@@ -37,13 +45,13 @@
 								aria-label="X (formerly twitter)"
 							>
 								<svg
-                width="20"
-                height="20"
+									width="20"
+									height="20"
 									viewBox="0 0 1200 1227"
 									xmlns="http://www.w3.org/2000/svg"
 									aria-hidden="true"
 									role="none"
-                  fill="currentColor"
+									fill="currentColor"
 								>
 									<path
 										d="M714.163 519.284L1160.89 0H1055.03L667.137 450.887L357.328 0H0L468.492 681.821L0 1226.37H105.866L515.491 750.218L842.672 1226.37H1200L714.137 519.284H714.163ZM569.165 687.828L521.697 619.934L144.011 79.6944H306.615L611.412 515.685L658.88 583.579L1055.08 1150.3H892.476L569.165 687.854V687.828Z"
@@ -85,6 +93,26 @@
 						</li>
 					</ul>
 				</nav>
+
+				<div class="theme-switcher">
+					<button id="theme-switcher">
+						<svg
+							xmlns="http://www.w3.org/2000/svg"
+							width="20"
+							height="20"
+							viewBox="0 0 24 24"
+							fill="none"
+							stroke="currentColor"
+							stroke-width="2"
+							stroke-linecap="round"
+							stroke-linejoin="round"
+						>
+							<path
+								d="M20.985 12.486a9 9 0 1 1-9.473-9.472c.405-.022.617.46.402.803a6 6 0 0 0 8.268 8.268c.344-.215.825-.004.803.401"
+							/>
+						</svg>
+					</button>
+				</div>
 			</aside>
 
 			<!-- Main Content -->
