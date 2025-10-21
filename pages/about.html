@@ -5,18 +5,119 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>About me - Benjamin Abolade</title>
 
+		<link rel="stylesheet" href="../css/fonts.css" />
 		<link rel="stylesheet" href="../css/style.css" />
 	</head>
 	<body>
-		<header>
+		<main class="page-container" data-testid="test-about-page">
+				<header>
 			<!-- Navigation -->
-			<nav>
+			<nav class="page-nav" aria-label="Main navigation">
 				<ul>
-					<li><a href="../index.html">Home</a></li>
-					<li><a href="./about.html" aria-current="page">About Me</a></li>
+					<li><a href="/" aria-current="page">Home</a></li>
+					<li><a href="./about.html">About Me</a></li>
 					<li><a href="./contact.html">Contact Us</a></li>
+          <li class="divide"></li>
+					<li class="theme-switcher">
+							<button id="theme-switcher">
+								<!-- prettier-ignore -->
+								<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="size-4.5"><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path d="M12 12m-9 0a9 9 0 1 0 18 0a9 9 0 1 0 -18 0"></path><path d="M12 3l0 18"></path><path d="M12 9l4.65 -4.65"></path><path d="M12 14.3l7.37 -7.37"></path><path d="M12 19.6l8.85 -8.85"></path></svg>
+							</button>
+					</li>
 				</ul>
 			</nav>
 		</header>
+
+
+			<!-- About Page Content -->
+			<section class="about-section">
+				<div class="about-container">
+					<h1 class="page-title">About me</h1>
+					<p class="page-subtitle">My journey, goals, and reflections on growth and learning.</p>
+
+					<!-- Bio Section -->
+					<section class="about-subsection">
+						<h2>Who I Am</h2>
+						<div class="about-bio" data-testid="test-about-bio">
+							<p>
+								I'm <b>Benjamin Abolade</b>, a passionate frontend developer with a deep commitment to
+								continuous learning and improvement. I believe in building inclusive, accessible, and
+								performant web experiences that solve real problems for real people.
+							</p>
+							<p>
+								My journey in web development has been driven by curiosity and a desire to master both
+								the creative and technical aspects of building for the web. I'm constantly exploring
+								new technologies, best practices, and methodologies to stay at the forefront of modern
+								web development.
+							</p>
+						</div>
+					</section>
+
+					<!-- Goals Section -->
+					<section class="about-subsection">
+						<h2>My Goals in This Program</h2>
+						<ul class="about-list" data-testid="test-about-goals">
+							<li>Master advanced <b>React patterns</b> and <b>state management</b> techniques</li>
+							<li>Deepen my understanding of <b>TypeScript</b> for <b>type-safe</b> development</li>
+							<li>Build <b>production-ready</b>, <b>full-stack</b> applications with <b>Node.js</b> and <b>databases</b></li>
+							<li>Develop expertise in <b>web accessibility</b> and <b>inclusive design</b></li>
+							<li>Create a <b>portfolio of projects</b> that demonstrate my <b>skills</b> and <b>growth</b></li>
+							<li><b>Collaborate effectively </b> with other <b>developers</b> and learn from their <b>experiences</b></li>
+						</ul>
+					</section>
+
+					<!-- Areas of Low Confidence Section -->
+					<section class="about-subsection">
+						<h2>Areas Where I Want to Grow</h2>
+						<ul class="about-list" data-testid="test-about-confidence">
+							<li>Backend architecture and system design at scale</li>
+							<li>Database optimization and complex query writing</li>
+							<li>DevOps and deployment pipeline management</li>
+							<li>Testing strategies and test automation</li>
+							<li>Performance profiling and optimization techniques</li>
+							<li>Leading technical projects and mentoring others</li>
+						</ul>
+					</section>
+
+					<!-- Note to Future Self Section -->
+					<section class="about-subsection">
+						<h2>A Note to My Future Self</h2>
+						<div class="about-note" data-testid="test-about-future-note">
+							<p>
+								Remember why you started this journey. There will be moments of frustration and
+								self-doubt, but every challenge is an opportunity to learn and grow. Don't compare
+								your beginning to someone else's middle. Focus on consistent, deliberate practice and
+								celebrate small wins along the way.
+							</p>
+							<p>
+								Stay curious, remain humble, and never stop learning. The web development landscape is
+								constantly evolving, and that's what makes it exciting. Embrace the journey, not just
+								the destination. Your future self will thank you for the effort you put in today.
+							</p>
+						</div>
+					</section>
+
+					<!-- Extra Thoughts Section -->
+					<section class="about-subsection">
+						<h2>Extra Thoughts</h2>
+						<div class="about-extra" data-testid="test-about-extra">
+							<p>
+								Beyond coding, I believe in the importance of work-life balance, continuous
+								self-improvement, and contributing to the developer community. I'm passionate about
+								mentoring others, sharing knowledge through writing and speaking, and building tools
+								that make developers' lives easier.
+							</p>
+							<p>
+								I'm also a firm believer in the power of open-source software and the collaborative
+								spirit of the developer community. I aim to contribute meaningfully to projects that
+								align with my values and help others grow in their development journey.
+							</p>
+						</div>
+					</section>
+				</div>
+			</section>
+		</main>
+
+		<script src="../app.js"></script>
 	</body>
 </html>
