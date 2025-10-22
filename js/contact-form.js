@@ -1,5 +1,6 @@
 const contactForm = document.getElementById("contact-form");
 const successMessage = document.getElementById("success-message");
+const pageSubtitle = document.querySelector(".page-subtitle")
 
 const validationRules = {
 	fullName: {
@@ -11,7 +12,7 @@ const validationRules = {
 			const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 			return emailRegex.test(value);
 		},
-		message: "Please enter a valid email address (e.g., name@example.com)",
+		message: "Please enter a valid email address (e.g., johndoe@gmail.com)",
 	},
 	subject: {
 		validate: (value) => value.trim().length > 0,
@@ -73,10 +74,11 @@ contactForm.addEventListener("submit", (e) => {
 	successMessage.style.display = "flex"; // original display in my css
 	successMessage.querySelector(".sender").textContent = data.fullName;
 	successMessage.classList.add("show");
+    successMessage.ariaHidden = "false"
 
 	//Hide contact form if the message is successfully sent
 	contactForm.style.display = "none";
-	document.querySelector(".page-subtitle").style.display = "none";
+	pageSubtitle.style.display = "none";
 
 	// Clear error messages
 	document.querySelectorAll(".error-message").forEach((el) => {
