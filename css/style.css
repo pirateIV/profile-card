@@ -85,7 +85,8 @@ body {
 	justify-content: center;
 	gap: 2rem;
 	/* padding: 20px; */
-	overflow: hidden scroll;
+	overflow-y: scroll;
+	overflow-x: hidden;
 }
 
 p {
@@ -154,8 +155,8 @@ svg {
 			background-color: var(--outline);
 			width: 200vw;
 			height: 1px;
-			left: -50vw;
-			right: -50vw;
+			left: -100vw;
+			right: -100vw;
 			top: 0;
 			z-index: 0;
 		}
@@ -440,25 +441,19 @@ header nav {
 	padding-left: 1rem;
 
 	& li {
-		padding: 5px 6px;
+		padding: 6px;
+		padding-left: 0.75rem;
 		color: var(--text-secondary);
 		font-size: 14px;
 		transition: var(--transition);
 		list-style: square;
 
-		/* &::before {
-      content: "⚘";
-      padding-right: 8px;
-      color: var(--marker);
-    } */
-
 		&::marker {
-      content: "✦";
+			content: "✦";
 			color: var(--marker);
 		}
 
 		&:hover {
-			background: rgba(6, 182, 212, 0.1);
 			transform: translateX(4px);
 		}
 	}
@@ -504,7 +499,7 @@ header nav {
 	}
 
 	& li::marker {
-    content: "✦";
+		content: "✦";
 		color: var(--marker);
 	}
 }
@@ -631,8 +626,6 @@ h3 {
 	}
 	.profile-card {
 		border-radius: 12px;
-		/* margin-inline: -20px; */
-		/* width: calc(100% + 40px); */
 	}
 	.profile-sidebar {
 		padding: 20px 16px;
