@@ -212,7 +212,7 @@ svg {
 
 .page-container {
 	padding: 20px;
-	padding-top: 5rem;
+	padding-top: 3rem;
 	width: 100%;
 	position: relative;
 	overflow: hidden;
@@ -618,10 +618,35 @@ h3 {
 		margin-top: 2rem;
 		color: light-dark(var(--light), var(--dark));
 		background-color: light-dark(var(--dark), var(--light));
-		/* color: light-dark((var(--dark)), var(--dark)); */
-		/* background: light-dark(var(--light),(var(--light))); */
 		padding: 12px 14px;
 		border-radius: 8px;
+	}
+}
+
+.success-message {
+	margin: 100px auto 0;
+	font-size: 20px;
+	text-align: center;
+	font-weight: 500;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	max-width: 75%;
+
+	& span {
+		padding: 20px;
+		border-radius: 50%;
+		border: 1px solid var(--outline);
+		background-color: rgba(181, 181, 181, 0.194);
+		color: var(--accent);
+	}
+
+	& strong {
+		color: var(--accent);
+	}
+	
+	.message {
+		margin-top: 1rem;
 	}
 }
 
@@ -730,6 +755,9 @@ h3 {
 	}
 	.section-title {
 		font-size: 1.1rem;
+	}
+	.success-message {
+		font-size: 16px;
 	}
 }
 
