@@ -4,30 +4,46 @@
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>About me - Benjamin Abolade</title>
+		<meta
+			name="description"
+			content="I'm Benjamin Abolade, a frontend developer passionate about building performant, accessible, and user-focused web experiences with modern JavaScript and React."
+		/>
 
+		<!-- Preload and styles -->
+		<link rel="preload" href="../css/fonts.css" as="style" />
+		<link rel="preload" href="../css/style.css" as="style" />
 		<link rel="stylesheet" href="../css/fonts.css" />
 		<link rel="stylesheet" href="../css/style.css" />
+
+		<!-- Early Theme Load to Prevent Flicker -->
+		<script>
+			(function () {
+				const savedTheme = localStorage.getItem("theme");
+				const systemDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+				const theme = savedTheme || (systemDark ? "dark" : "light");
+				document.documentElement.setAttribute("data-theme", theme);
+			})();
+		</script>
 	</head>
 	<body>
 		<main class="page-container" data-testid="test-about-page">
-				<header>
-			<!-- Navigation -->
-			<nav class="page-nav" aria-label="Main navigation">
-				<ul>
-					<li><a href="/" aria-current="page">Home</a></li>
-					<li><a href="./about.html">About Me</a></li>
-					<li><a href="./contact.html">Contact Us</a></li>
-          <li class="divide"></li>
-					<li class="theme-switcher">
+			<header>
+				<!-- Navigation -->
+				<nav class="page-nav" aria-label="Main navigation">
+					<ul>
+						<li><a href="../index.html">Home</a></li>
+						<li><a href="./about.html" aria-current="page">About me</a></li>
+						<li><a href="./contact.html">Contact</a></li>
+						<li class="divide"></li>
+						<li class="theme-switcher">
 							<button id="theme-switcher">
 								<!-- prettier-ignore -->
 								<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="size-4.5"><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path d="M12 12m-9 0a9 9 0 1 0 18 0a9 9 0 1 0 -18 0"></path><path d="M12 3l0 18"></path><path d="M12 9l4.65 -4.65"></path><path d="M12 14.3l7.37 -7.37"></path><path d="M12 19.6l8.85 -8.85"></path></svg>
 							</button>
-					</li>
-				</ul>
-			</nav>
-		</header>
-
+						</li>
+					</ul>
+				</nav>
+			</header>
 
 			<!-- About Page Content -->
 			<section class="about-section">
@@ -40,7 +56,7 @@
 						<h2>Who I Am</h2>
 						<div class="about-bio" data-testid="test-about-bio">
 							<p>
-								I'm <b>Benjamin Abolade</b>, a passionate frontend developer with a deep commitment to
+								I'm <strong>Benjamin Abolade</strong>, a passionate frontend developer with a deep commitment to
 								continuous learning and improvement. I believe in building inclusive, accessible, and
 								performant web experiences that solve real problems for real people.
 							</p>
@@ -57,12 +73,21 @@
 					<section class="about-subsection">
 						<h2>My Goals in This Program</h2>
 						<ul class="about-list" data-testid="test-about-goals">
-							<li>Master advanced <b>React patterns</b> and <b>state management</b> techniques</li>
-							<li>Deepen my understanding of <b>TypeScript</b> for <b>type-safe</b> development</li>
-							<li>Build <b>production-ready</b>, <b>full-stack</b> applications with <b>Node.js</b> and <b>databases</b></li>
-							<li>Develop expertise in <b>web accessibility</b> and <b>inclusive design</b></li>
-							<li>Create a <b>portfolio of projects</b> that demonstrate my <b>skills</b> and <b>growth</b></li>
-							<li><b>Collaborate effectively </b> with other <b>developers</b> and learn from their <b>experiences</b></li>
+							<li>Master advanced <strong>React patterns</strong> and <strong>state management</strong> techniques</li>
+							<li>Deepen my understanding of <strong>TypeScript</strong> for <strong>type-safe</strong> development</li>
+							<li>
+								Build <strong>production-ready</strong>, <strong>full-stack</strong> applications with <strong>Node.js</strong> and
+								<strong>databases</strong>
+							</li>
+							<li>Develop expertise in <strong>web accessibility</strong> and <strong>inclusive design</strong></li>
+							<li>
+								Create a <strong>portfolio of projects</strong> that demonstrate my <strong>skills</strong> and
+								<strong>growth</strong>
+							</li>
+							<li>
+								<strong>Collaborate effectively </strong> with other <strong>developers</strong> and learn from their
+								<strong>experiences</strong>
+							</li>
 						</ul>
 					</section>
 

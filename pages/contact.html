@@ -4,18 +4,35 @@
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Contact me - Benjamin Abolade</title>
+		<meta
+			name="description"
+			content="I'm Benjamin Abolade, a frontend developer passionate about building performant, accessible, and user-focused web experiences with modern JavaScript and React."
+		/>
 
+		<!-- Preload and styles -->
+		<link rel="preload" href="../css/fonts.css" as="style" />
+		<link rel="preload" href="../css/style.css" as="style" />
 		<link rel="stylesheet" href="../css/fonts.css" />
 		<link rel="stylesheet" href="../css/style.css" />
+
+		<!-- Early Theme Load to Prevent Flicker -->
+		<script>
+			(function () {
+				const savedTheme = localStorage.getItem("theme");
+				const systemDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+				const theme = savedTheme || (systemDark ? "dark" : "light");
+				document.documentElement.setAttribute("data-theme", theme);
+			})();
+		</script>
 	</head>
 	<body>
 		<header>
 			<!-- Navigation -->
 			<nav class="page-nav" aria-label="Main navigation">
 				<ul>
-					<li><a href="/" aria-current="page">Home</a></li>
-					<li><a href="./about.html">About Me</a></li>
-					<li><a href="./contact.html">Contact Us</a></li>
+					<li><a href="../index.html">Home</a></li>
+					<li><a href="./about.html">About me</a></li>
+					<li><a href="./contact.html" aria-current="page">Contact</a></li>
 					<li class="divide"></li>
 					<li class="theme-switcher">
 						<button id="theme-switcher">

@@ -4,13 +4,30 @@
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Benjamin Abolade - Frontend Developer</title>
+		<meta
+			name="description"
+			content="I'm Benjamin Abolade, a frontend developer passionate about building performant, accessible, and user-focused web experiences with modern JavaScript and React."
+		/>
 
 		<!-- <link rel="preconnect" href="https://pirateiv.github.io" /> -->
+
+		<!-- Preload and styles -->
 		<link rel="preload" href="./css/fonts.css" as="style" />
 		<link rel="preload" href="./css/style.css" as="style" />
-
 		<link rel="stylesheet" href="./css/fonts.css" />
 		<link rel="stylesheet" href="./css/style.css" />
+
+		<!-- Early Theme Load to Prevent Flicker -->
+		<script>
+			(function () {
+				const savedTheme = localStorage.getItem("theme");
+				const systemDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+				const theme = savedTheme || (systemDark ? "dark" : "light");
+				document.documentElement.setAttribute("data-theme", theme);
+			})();
+		</script>
+
+		<!-- Speculative Loading -->
 		<script type="speculationrules">
 			{
 				"prerender": [
@@ -31,13 +48,13 @@
 				<nav class="page-nav" aria-label="Main navigation">
 					<ul>
 						<li><a href="./index.html" aria-current="page">Home</a></li>
-						<li><a href="./pages/about.html">About Me</a></li>
-						<li><a href="./pages/contact.html">Contact Us</a></li>
+						<li><a href="./pages/about.html">About me</a></li>
+						<li><a href="./pages/contact.html">Contact</a></li>
 						<li class="divide"></li>
 						<li class="theme-switcher">
-							<button id="theme-switcher">
+							<button id="theme-switcher" aria-label="theme switcher">
 								<!-- prettier-ignore -->
-								<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="size-4.5"><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path d="M12 12m-9 0a9 9 0 1 0 18 0a9 9 0 1 0 -18 0"></path><path d="M12 3l0 18"></path><path d="M12 9l4.65 -4.65"></path><path d="M12 14.3l7.37 -7.37"></path><path d="M12 19.6l8.85 -8.85"></path></svg>
+								<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="size-4.5"><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path d="M12 12m-9 0a9 9 0 1 0 18 0a9 9 0 1 0 -18 0"></path><path d="M12 3l0 18"></path><path d="M12 9l4.65 -4.65"></path><path d="M12 14.3l7.37 -7.37"></path><path d="M12 19.6l8.85 -8.85"></path></svg>
 							</button>
 						</li>
 					</ul>
@@ -132,24 +149,24 @@
 					<section class="content-section">
 						<div class="profile-bio" data-testid="test-user-bio">
 							<p>
-								I’m passionate about <b>learning and improvement</b>. Lately, I’ve been exploring
-								advanced React patterns, TypeScript for type-safe development, and web performance
-								optimization techniques. I also study web accessibility to make sure my projects are
-								inclusive and usable for all audiences.
+								I’m passionate about <strong>learning and improvement</strong>. Lately, I’ve been
+								exploring advanced React patterns, TypeScript for type-safe development, and web
+								performance optimization techniques. I also study web accessibility to make sure my
+								projects are inclusive and usable for all audiences.
 							</p>
 
 							<p>
 								Beyond the frontend, I enjoy expanding my understanding of
-								<b>full-stack JavaScript development</b>. I use Node.js, Express, and MongoDB to build
-								complete, data-driven applications. I value clarity, structure, and thoughtful design
-								systems that scale with projects over time.
+								<strong>full-stack JavaScript development</strong>. I use Node.js, Express, and
+								MongoDB to build complete, data-driven applications. I value clarity, structure, and
+								thoughtful design systems that scale with projects over time.
 							</p>
 
 							<p>
 								My motivation comes from solving real problems with code and collaborating on projects
-								that blend <b>creativity and engineering</b>. Whether it’s creating interactive UIs,
-								optimizing app performance, or experimenting with new frameworks, I’m always looking
-								for ways to push the limits of what’s possible on the web.
+								that blend <strong>creativity and engineering</strong>. Whether it’s creating
+								interactive UIs, optimizing app performance, or experimenting with new frameworks, I’m
+								always looking for ways to push the limits of what’s possible on the web.
 							</p>
 						</div>
 					</section>
@@ -158,11 +175,11 @@
 					<section class="content-section">
 						<h2 class="section-title">Hobbies</h2>
 						<ul class="profile-list" data-testid="test-user-hobbies">
-							<li>Programming</li>
-							<li>Real world adventures games</li>
-							<li>Reading romance novels</li>
-							<li>Playing the drums</li>
-							<li>Alone time</li>
+							<li>Exploring design systems and the art of good UI/UX</li>
+							<li>Reading about psychology, creativity, and human behavior</li>
+							<li>Listening to soothing music while coding</li>
+							<li>Turning rough sketches into smooth interactions</li>
+							<li>Getting lost in nature or quiet solo moments</li>
 						</ul>
 					</section>
 
@@ -170,8 +187,9 @@
 					<section class="content-section">
 						<h2 class="section-title">Dislikes</h2>
 						<ul class="profile-list" data-testid="test-user-dislikes">
-							<li>Disturbance while working (coding)</li>
-							<li>Unintended visits</li>
+							<li>Interruptions while working (coding)</li>
+							<li>Meetings without clear purpose</li>
+							<li>Unexpected visits</li>
 							<li>Unfruitful Arguments</li>
 						</ul>
 					</section>
