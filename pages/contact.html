@@ -26,23 +26,140 @@
 		</script>
 	</head>
 	<body>
-		<header>
-			<!-- Navigation -->
-			<nav class="page-nav" aria-label="Main navigation">
-				<ul>
-					<li><a href="../index.html">Home</a></li>
-					<li><a href="./about.html">About me</a></li>
-					<li><a href="./contact.html" aria-current="page">Contact</a></li>
-					<li class="divide"></li>
-					<li class="theme-switcher">
-						<button id="theme-switcher">
-							<!-- prettier-ignore -->
-							<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="size-4.5"><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path d="M12 12m-9 0a9 9 0 1 0 18 0a9 9 0 1 0 -18 0"></path><path d="M12 3l0 18"></path><path d="M12 9l4.65 -4.65"></path><path d="M12 14.3l7.37 -7.37"></path><path d="M12 19.6l8.85 -8.85"></path></svg>
+		<main class="page-container">
+			<header>
+				<!-- Navigation -->
+				<nav class="page-nav" aria-label="Main navigation">
+					<ul>
+						<li><a href="../index.html">Home</a></li>
+						<li><a href="./about.html">About me</a></li>
+						<li><a href="./contact.html" aria-current="page">Contact</a></li>
+						<li class="divide"></li>
+						<li class="theme-switcher">
+							<button id="theme-switcher">
+								<!-- prettier-ignore -->
+								<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="size-4.5"><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path d="M12 12m-9 0a9 9 0 1 0 18 0a9 9 0 1 0 -18 0"></path><path d="M12 3l0 18"></path><path d="M12 9l4.65 -4.65"></path><path d="M12 14.3l7.37 -7.37"></path><path d="M12 19.6l8.85 -8.85"></path></svg>
+							</button>
+						</li>
+					</ul>
+				</nav>
+			</header>
+			<!-- Contact Form Section -->
+			<section class="contact-section">
+				<div class="contact-container">
+					<h1 class="page-title">Get In Touch</h1>
+					<p class="page-subtitle">
+						I'd love to hear from you. Send me a message and I'll respond as soon as possible.
+					</p>
+
+					<!-- Contact form with validation and accessibility features -->
+					<form id="contact-form" class="contact-form" novalidate>
+						<!-- Full Name Field -->
+						<div class="form-group">
+							<label for="contact-name">Full Name <span aria-label="required">*</span></label>
+							<input
+								type="text"
+								id="contact-name"
+								name="fullName"
+								data-testid="test-contact-name"
+								required
+								aria-required="true"
+								aria-describedby="error-fullName"
+								placeholder="John Doe"
+							/>
+							<div
+								id="error-fullName"
+								class="error-message"
+								data-testid="test-contact-error-fullName"
+								role="alert"
+								aria-live="polite"
+							></div>
+						</div>
+
+						<!-- Email Field -->
+						<div class="form-group">
+							<label for="contact-email">Email Address <span aria-label="required">*</span></label>
+							<input
+								type="email"
+								id="contact-email"
+								name="email"
+								data-testid="test-contact-email"
+								required
+								aria-required="true"
+								aria-describedby="error-email"
+								placeholder="john@example.com"
+							/>
+							<div
+								id="error-email"
+								class="error-message"
+								data-testid="test-contact-error-email"
+								role="alert"
+								aria-live="polite"
+							></div>
+						</div>
+
+						<!-- Subject Field -->
+						<div class="form-group">
+							<label for="contact-subject">Subject <span aria-label="required">*</span></label>
+							<input
+								type="text"
+								id="contact-subject"
+								name="subject"
+								data-testid="test-contact-subject"
+								required
+								aria-required="true"
+								aria-describedby="error-subject"
+								placeholder="What is this about?"
+							/>
+							<div
+								id="error-subject"
+								class="error-message"
+								data-testid="test-contact-error-subject"
+								role="alert"
+								aria-live="polite"
+							></div>
+						</div>
+
+						<!-- Message Field -->
+						<div class="form-group">
+							<label for="contact-message">Message <span aria-label="required">*</span></label>
+							<textarea
+								id="contact-message"
+								name="message"
+								data-testid="test-contact-message"
+								required
+								aria-required="true"
+								aria-describedby="error-message"
+								placeholder="Your message here..."
+								rows="6"
+							></textarea>
+							<div
+								id="error-message"
+								class="error-message"
+								data-testid="test-contact-error-message"
+								role="alert"
+								aria-live="polite"
+							></div>
+						</div>
+
+						<!-- Submit Button -->
+						<button type="submit" class="submit-btn" data-testid="test-contact-submit">
+							Send Message
 						</button>
-					</li>
-				</ul>
-			</nav>
-		</header>
+
+						<!-- Success Message -->
+						<div
+							id="success-message"
+							class="success-message"
+							data-testid="test-contact-success"
+							role="status"
+							aria-live="polite"
+							aria-hidden="true"
+						></div>
+					</form>
+				</div>
+			</section>
+		</main>
 
 		<script src="../app.js"></script>
 	</body>

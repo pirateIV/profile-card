@@ -25,8 +25,8 @@
 		--text-primary: #0f172a;
 		--text-secondary: #475569;
 		--border: #e2e8f0;
-		--text-heading: #030712;
-		--text-lead: oklch(44.6% 0.03 256.802);
+		--text-heading: oklch(37.3% 0.034 259.733);
+		--text-lead: oklch(21% 0.034 264.665);
 		--text-base: #4a5565;
 		--outline: rgba(24, 24, 24, 0.111);
 		--marker: #a1a5ab;
@@ -42,8 +42,8 @@
 	--text-primary: #0f172a;
 	--text-secondary: #475569;
 	--border: oklch(70.7% 0.022 261.325);
-	--text-heading: #030712;
-	--text-lead: oklch(44.6% 0.03 256.802);
+	--text-heading: oklch(37.3% 0.034 259.733);
+	--text-lead: oklch(21% 0.034 264.665);
 	--text-base: #4a5565;
 	--outline: rgba(24, 24, 24, 0.111);
 	--marker: #a1a5ab;
@@ -84,9 +84,24 @@ body {
 	align-items: center;
 	justify-content: center;
 	gap: 2rem;
-	/* padding: 20px; */
 	overflow-y: scroll;
 	overflow-x: hidden;
+
+	&::before,
+	&::after {
+		content: "";
+		position: absolute;
+		left: 2rem;
+		background: var(--outline);
+		width: 1px;
+		top: 0;
+		bottom: 0;
+	}
+
+	&::after {
+		left: unset;
+		right: 3rem;
+	}
 }
 
 p {
@@ -141,7 +156,11 @@ svg {
 	}
 }
 
-:is(.about-section) {
+:is(.about-section, .contact-section) {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
 	h1,
 	h2,
 	h3 {
@@ -177,6 +196,11 @@ svg {
 
 .page-container {
 	padding: 20px;
+	padding-top: 5rem;
+	/* height: 100dvh; */
+	width: 100%;
+	position: relative;
+	overflow: hidden;
 }
 
 /* Navigation */
@@ -231,12 +255,13 @@ header nav {
 	position: relative;
 	display: grid;
 	grid-template-columns: 1fr 2fr;
-	margin-top: 1rem;
+	/* margin-top: 1rem; */
 	gap: 0;
 	background: var(--secondary);
 	border-radius: 16px;
 	overflow: hidden;
 	max-width: 1000px;
+	margin: auto;
 	width: 100%;
 	box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
 	border: 2px solid var(--border);
@@ -404,7 +429,7 @@ header nav {
 	color: var(--text-secondary);
 	letter-spacing: 0.3px;
 
-	& p {
+	& p + p {
 		margin-top: 10px;
 	}
 
@@ -460,14 +485,13 @@ header nav {
 }
 
 .about-section {
-	margin-top: 70px;
 	position: relative;
 
-	&::before,
+	/* &::before,
 	&::after {
 		content: "";
 		width: 1px;
-		height: 200%;
+		height: 300%;
 		position: absolute;
 		left: 0;
 		top: -100%;
@@ -478,7 +502,7 @@ header nav {
 	&:after {
 		left: 100%;
 		right: 0;
-	}
+	} */
 
 	h2 {
 		font-size: 20px;
@@ -504,8 +528,10 @@ header nav {
 	}
 }
 
-.about-container {
+.about-container,
+.contact-container {
 	max-width: 900px;
+	width: 100%;
 	padding-inline: 2rem;
 }
 
@@ -568,7 +594,6 @@ h3 {
 
 	.profile-card {
 		grid-template-columns: 1fr;
-		margin-top: 3.5rem;
 		outline-width: 6px;
 	}
 	.profile-sidebar {
@@ -604,6 +629,10 @@ h3 {
 @media (max-width: 480px) {
 	body {
 		padding: 6px;
+		&::before,
+		&::after {
+			display: none;
+		}
 	}
 	.page-container {
 		padding-inline: 0;
@@ -617,12 +646,6 @@ h3 {
 	}
 	.about-container {
 		padding-inline: 0.35rem;
-	}
-	.about-section {
-		&::before,
-		&::after {
-			display: none;
-		}
 	}
 	.profile-card {
 		border-radius: 12px;
@@ -648,7 +671,6 @@ h3 {
 	.profile-card {
 		border-radius: 0;
 		border-inline: 0;
-		/* outline: none; */
 		margin-inline: -10px;
 		width: calc(100% + 20px);
 	}
