@@ -94,8 +94,13 @@
 	--transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-html {
+:root {
 	font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+}
+
+html,
+body {
+	font-family: "InterVar", system-ui, -apple-system, sans-serif;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 }
@@ -104,8 +109,6 @@ body {
 	min-height: 100vh;
 	position: relative;
 	background: var(--primary);
-	/* background: linear-gradient(135deg, var(--primary) 0%, #0f0f1e 100%); */
-	font-family: "InterVar", system-ui, -apple-system, sans-serif;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -113,6 +116,7 @@ body {
 	overflow-y: scroll;
 	overflow-x: hidden;
 	color: var(--text-base);
+	font-family: inherit;
 	font-size: 14px;
 
 	&::before,
@@ -136,15 +140,18 @@ body {
 	background: linear-gradient(135deg, #f8fafc 0%, #f0f4f8 100%);
 }
 
-button,
-input,
-textarea {
-	border: none;
-}
 
 button {
 	cursor: pointer;
 	color: var(--text-primary);
+}
+
+button,
+input,
+textarea {
+	border: none;
+	font-family: inherit;
+	font-feature-settings: "cv02", "cv03", "cv04", "cv11";
 }
 
 svg {
@@ -600,7 +607,6 @@ h3 {
 		color: var(--text-lead);
 		border-radius: 8px;
 		font-size: inherit;
-		font-family: system-ui;
 	}
 
 	.error-message {
@@ -620,6 +626,10 @@ h3 {
 		background-color: light-dark(var(--dark), var(--light));
 		padding: 12px 14px;
 		border-radius: 8px;
+
+		&:hover {
+			opacity: 85%;
+		}
 	}
 }
 
@@ -644,7 +654,7 @@ h3 {
 	& strong {
 		color: var(--accent);
 	}
-	
+
 	.message {
 		margin-top: 1rem;
 	}
