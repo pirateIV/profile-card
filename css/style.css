@@ -8,28 +8,45 @@
 	color-scheme: light;
 	--primary: #0f172a;
 	--secondary: #1e293b;
-	/* --accent: oklch(62.3% 0.214 259.815); */
+	--light: oklch(98.5% 0.002 247.839);
+	--light-2: oklch(96.7% 0.003 264.542);
+	--dark: oklch(13% 0.028 261.692);
+	--dark-2: oklch(27.8% 0.033 256.848);
 	--accent: oklch(74.6% 0.16 232.661);
+
 	--text-primary: #f1f5f9;
 	--text-secondary: #cbd5e1;
+	--text-heading: #ffffff;
+	--text-lead: #d1d5dc;
+	--text-base: #99a1af;
+
 	--border: #334155;
+	--outline: rgba(255, 255, 255, 0.111);
+	--marker: #384357;
 	--transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 @media (prefers-color-scheme: light) {
 	:root {
+		color-scheme: light;
 		--primary: #f8fafc;
 		--secondary: #f1f5f9;
+		--light: oklch(98.5% 0.002 247.839);
+		--light-2: oklch(96.7% 0.003 264.542);
+		--dark: oklch(13% 0.028 261.692);
+		--dark-2: oklch(27.8% 0.033 256.848);
 		--accent: oklch(52% 0.105 223.128);
 
 		--text-primary: #0f172a;
 		--text-secondary: #475569;
-		--border: #e2e8f0;
-		--text-heading: oklch(37.3% 0.034 259.733);
+		--text-heading: oklch(13% 0.028 261.692);
 		--text-lead: oklch(21% 0.034 264.665);
 		--text-base: #4a5565;
+
+		--border: #e2e8f0;
 		--outline: rgba(24, 24, 24, 0.111);
 		--marker: #a1a5ab;
+		--transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 	}
 }
 
@@ -37,32 +54,44 @@
 	color-scheme: light;
 	--primary: #f8fafc;
 	--secondary: #f1f5f9;
+	--light: oklch(98.5% 0.002 247.839);
+	--light-2: oklch(96.7% 0.003 264.542);
+	--dark: oklch(13% 0.028 261.692);
+	--dark-2: oklch(27.8% 0.033 256.848);
 	--accent: oklch(52% 0.105 223.128);
 
 	--text-primary: #0f172a;
 	--text-secondary: #475569;
-	--border: oklch(70.7% 0.022 261.325);
-	--text-heading: oklch(37.3% 0.034 259.733);
+	--text-heading: oklch(13% 0.028 261.692);
 	--text-lead: oklch(21% 0.034 264.665);
 	--text-base: #4a5565;
+
+	--border: oklch(70.7% 0.022 261.325);
 	--outline: rgba(24, 24, 24, 0.111);
 	--marker: #a1a5ab;
+	--transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 [data-theme="dark"] {
 	color-scheme: dark;
 	--primary: #030712;
 	--secondary: #131924;
+	--light: oklch(98.5% 0.002 247.839);
+	--light-2: oklch(96.7% 0.003 264.542);
+	--dark: oklch(13% 0.028 261.692);
+	--dark-2: oklch(27.8% 0.033 256.848);
 	--accent: oklch(74.6% 0.16 232.661);
 
 	--text-primary: #f1f5f9;
 	--text-secondary: #cbd5e1;
-	--border: #334155;
 	--text-heading: #ffffff;
 	--text-lead: #d1d5dc;
 	--text-base: #99a1af;
+
+	--border: #334155;
 	--outline: rgba(255, 255, 255, 0.111);
 	--marker: #384357;
+	--transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 html {
@@ -72,26 +101,25 @@ html {
 }
 
 body {
+	min-height: 100vh;
 	position: relative;
-	font-family: "InterVar", system-ui, -apple-system, sans-serif;
-	background: black;
 	background: var(--primary);
 	/* background: linear-gradient(135deg, var(--primary) 0%, #0f0f1e 100%); */
-	color: var(--text-base);
-	min-height: 100vh;
+	font-family: "InterVar", system-ui, -apple-system, sans-serif;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	justify-content: center;
 	gap: 2rem;
 	overflow-y: scroll;
 	overflow-x: hidden;
+	color: var(--text-base);
+  font-size: 14px;
 
 	&::before,
 	&::after {
 		content: "";
 		position: absolute;
-		left: 2rem;
+		left: 3rem;
 		background: var(--outline);
 		width: 1px;
 		top: 0;
@@ -104,29 +132,17 @@ body {
 	}
 }
 
-p {
-	color: var(--text-base);
-}
-
-/* Decorative background SVG */
-body > svg {
-	position: fixed;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-	pointer-events: none;
-	z-index: 1;
-	display: block;
-}
-
 [data-theme="light"] body {
 	background: linear-gradient(135deg, #f8fafc 0%, #f0f4f8 100%);
 }
 
-button {
-	background-color: transparent;
+button,
+input,
+textarea {
 	border: none;
+}
+
+button {
 	cursor: pointer;
 	color: var(--text-primary);
 }
@@ -146,12 +162,12 @@ svg {
 
 	& button {
 		padding: 2px;
-		border-radius: 50%;
+		border-radius: 4px;
 		color: var(--text-primary);
+		background: var(--outline);
 
 		&:hover {
 			color: var(--accent);
-			background: rgba(6, 182, 212, 0.1);
 		}
 	}
 }
@@ -197,7 +213,6 @@ svg {
 .page-container {
 	padding: 20px;
 	padding-top: 5rem;
-	/* height: 100dvh; */
 	width: 100%;
 	position: relative;
 	overflow: hidden;
@@ -233,7 +248,6 @@ header nav {
 	}
 
 	& a {
-		font-size: 14px;
 		text-wrap: nowrap;
 		color: var(--text-primary);
 		text-decoration: none;
@@ -400,7 +414,6 @@ header nav {
 
 	&::-webkit-scrollbar-thumb {
 		background: var(--border);
-		/* border-radius: 3px; */
 	}
 
 	&::-webkit-scrollbar-thumb:hover {
@@ -469,7 +482,6 @@ header nav {
 		padding: 6px;
 		padding-left: 0.75rem;
 		color: var(--text-secondary);
-		font-size: 14px;
 		transition: var(--transition);
 		list-style: square;
 
@@ -487,30 +499,12 @@ header nav {
 .about-section {
 	position: relative;
 
-	/* &::before,
-	&::after {
-		content: "";
-		width: 1px;
-		height: 300%;
-		position: absolute;
-		left: 0;
-		top: -100%;
-		bottom: -100%;
-		background-color: var(--outline);
-	}
-
-	&:after {
-		left: 100%;
-		right: 0;
-	} */
-
 	h2 {
 		font-size: 20px;
 	}
 
 	li,
 	p {
-		font-size: 14px;
 	}
 
 	p:not(.page-subtitle) {
@@ -582,14 +576,58 @@ h3 {
 	font-family: "Courier New", Courier, monospace;
 }
 
+.contact-form {
+	& > .form-group {
+		display: grid;
+		grid-template-columns: 200px 1fr;
+	}
+
+	& > .form-group + .form-group {
+		margin-top: 1rem;
+	}
+
+	label {
+		font-weight: 500;
+	}
+
+	& input,
+	textarea {
+		padding: 8px 14px;
+		border: 1px solid var(--outline);
+		background: light-dark(oklch(92.8% 0.006 264.531), oklch(27.8% 0.033 256.848));
+		color: var(--text-lead);
+		border-radius: 8px;
+		font-size: inherit;
+		font-family: system-ui;
+	}
+
+	.submit-btn {
+		display: flex;
+		margin-left: auto;
+		margin-top: 2rem;
+		color: light-dark(var(--light), var(--dark));
+		background-color: light-dark(var(--dark), var(--light));
+		/* color: light-dark((var(--dark)), var(--dark)); */
+		/* background: light-dark(var(--light),(var(--light))); */
+		padding: 12px 14px;
+		border-radius: 8px;
+	}
+}
+
 /* Responsive */
 @media (max-width: 768px) {
+	body {
+		padding: 6px;
+		&::before {
+			left: 2rem;
+		}
+		&::after {
+			right: 2rem;
+		}
+	}
+
 	header nav {
 		padding: 0.45rem 1.15rem;
-
-		& a {
-			font-size: 14px;
-		}
 	}
 
 	.profile-card {
@@ -623,6 +661,16 @@ h3 {
 
 	.page-title {
 		font-size: 2.5rem;
+	}
+
+	.contact-form {
+		& .form-group {
+			grid-template-columns: 1fr;
+		}
+
+		& label {
+			margin-bottom: 8px;
+		}
 	}
 }
 
