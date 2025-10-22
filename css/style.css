@@ -17,7 +17,7 @@
 	--text-primary: #f1f5f9;
 	--text-secondary: #cbd5e1;
 	--text-heading: #ffffff;
-	--text-lead: #d1d5dc;
+	--text-lead: #ffffff;
 	--text-base: #99a1af;
 
 	--border: #334155;
@@ -85,7 +85,7 @@
 	--text-primary: #f1f5f9;
 	--text-secondary: #cbd5e1;
 	--text-heading: #ffffff;
-	--text-lead: #d1d5dc;
+	--text-lead: #ffffff;
 	--text-base: #99a1af;
 
 	--border: #334155;
@@ -113,7 +113,7 @@ body {
 	overflow-y: scroll;
 	overflow-x: hidden;
 	color: var(--text-base);
-  font-size: 14px;
+	font-size: 14px;
 
 	&::before,
 	&::after {
@@ -219,7 +219,7 @@ svg {
 }
 
 /* Navigation */
-header nav {
+.page-nav {
 	position: fixed;
 	top: 14px;
 	left: 50%;
@@ -277,7 +277,7 @@ header nav {
 	max-width: 1000px;
 	margin: auto;
 	width: 100%;
-	box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+	box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
 	border: 2px solid var(--border);
 	outline: 10px solid var(--outline);
 	z-index: 2;
@@ -504,7 +504,8 @@ header nav {
 	}
 
 	li,
-	p {
+	p:not(.page-subtitle) {
+		color: var(--text-secondary);
 	}
 
 	p:not(.page-subtitle) {
@@ -565,7 +566,7 @@ h3 {
 }
 
 .page-subtitle {
-	font-size: 12px;
+	font-size: 14px;
 	letter-spacing: -0.02em;
 	text-transform: uppercase;
 	margin-bottom: 50px;
@@ -592,6 +593,7 @@ h3 {
 
 	& input,
 	textarea {
+		width: 100%;
 		padding: 8px 14px;
 		border: 1px solid var(--outline);
 		background: light-dark(oklch(92.8% 0.006 264.531), oklch(27.8% 0.033 256.848));
@@ -599,6 +601,15 @@ h3 {
 		border-radius: 8px;
 		font-size: inherit;
 		font-family: system-ui;
+	}
+
+	.error-message {
+		grid-column-start: 2;
+		font-size: 12px;
+		color: red;
+		min-height: 15px;
+		margin-top: 4px;
+		font-weight: 500;
 	}
 
 	.submit-btn {
@@ -626,13 +637,16 @@ h3 {
 		}
 	}
 
-	header nav {
+	.page-nav {
 		padding: 0.45rem 1.15rem;
 	}
 
 	.profile-card {
 		grid-template-columns: 1fr;
 		outline-width: 6px;
+	}
+	.contact-form .error-message {
+		grid-column-start: unset;
 	}
 	.profile-sidebar {
 		border-right: none;
@@ -663,6 +677,10 @@ h3 {
 		font-size: 2.5rem;
 	}
 
+	.page-subtitle {
+		margin-bottom: 30px;
+	}
+
 	.contact-form {
 		& .form-group {
 			grid-template-columns: 1fr;
@@ -685,7 +703,7 @@ h3 {
 	.page-container {
 		padding-inline: 0;
 	}
-	header nav {
+	.page-nav {
 		max-width: 100%;
 
 		& ul {
@@ -717,7 +735,7 @@ h3 {
 
 @media (max-width: 390px) {
 	.profile-card {
-		border-radius: 0;
+		border-radius: 0px;
 		border-inline: 0;
 		margin-inline: -10px;
 		width: calc(100% + 20px);

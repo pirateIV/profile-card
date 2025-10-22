@@ -42,25 +42,44 @@
 		</script>
 	</head>
 	<body>
-		<main class="page-container">
-			<header>
-				<!-- Navigation -->
-				<nav class="page-nav" aria-label="Main navigation">
-					<ul>
-						<li><a href="./index.html" aria-current="page">Home</a></li>
-						<li><a href="./pages/about.html">About me</a></li>
-						<li><a href="./pages/contact.html">Contact</a></li>
-						<li class="divide"></li>
-						<li class="theme-switcher">
-							<button id="theme-switcher" aria-label="theme switcher">
-								<!-- prettier-ignore -->
-								<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="size-4.5"><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path d="M12 12m-9 0a9 9 0 1 0 18 0a9 9 0 1 0 -18 0"></path><path d="M12 3l0 18"></path><path d="M12 9l4.65 -4.65"></path><path d="M12 14.3l7.37 -7.37"></path><path d="M12 19.6l8.85 -8.85"></path></svg>
-							</button>
-						</li>
-					</ul>
-				</nav>
-			</header>
+		<!-- Navigation -->
+		<header>
+			<nav class="page-nav" aria-label="Main navigation">
+				<ul>
+					<li><a href="./index.html" aria-current="page">Home</a></li>
+					<li><a href="./pages/about.html">About me</a></li>
+					<li><a href="./pages/contact.html">Contact</a></li>
+					<li class="divide" aria-hidden="true"></li>
+					<li class="theme-switcher">
+						<button id="theme-switcher" aria-label="theme switch">
+							<svg
+								xmlns="http://www.w3.org/2000/svg"
+								width="16"
+								height="16"
+								aria-hidden="true"
+								viewBox="0 0 24 24"
+								fill="none"
+								stroke="currentColor"
+								stroke-width="2"
+								stroke-linecap="round"
+								stroke-linejoin="round"
+								class="size-4.5"
+							>
+								<path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+								<path d="M12 12m-9 0a9 9 0 1 0 18 0a9 9 0 1 0 -18 0"></path>
+								<path d="M12 3l0 18"></path>
+								<path d="M12 9l4.65 -4.65"></path>
+								<path d="M12 14.3l7.37 -7.37"></path>
+								<path d="M12 19.6l8.85 -8.85"></path>
+							</svg>
+						</button>
+					</li>
+				</ul>
+			</nav>
+		</header>
 
+		<!-- Main content -->
+		<main class="page-container">
 			<article class="profile-card" data-testid="test-profile-card">
 				<!-- Left Sidebar -->
 				<aside class="profile-sidebar">
@@ -74,7 +93,9 @@
 					</figure>
 
 					<div class="profile-meta">
-						<h1 class="profile-name" data-testid="test-user-name">Benjamin Abolade</h1>
+						<h2 class="profile-name" aria-label="Profile author's name" data-testid="test-user-name">
+							Benjamin Abolade
+						</h2>
 						<p class="profile-title">Frontend Developer</p>
 						<a href="mailto:benabolade@gmail.com" class="profile-email">benabolade@gmail.com</a>
 						<div class="profile-time" data-testid="test-user-time"></div>
@@ -196,6 +217,6 @@
 				</div>
 			</article>
 		</main>
-		<script src="./app.js"></script>
+		<script src="./js/app.js"></script>
 	</body>
 </html>

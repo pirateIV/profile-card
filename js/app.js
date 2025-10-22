@@ -1,3 +1,5 @@
+// ==================== Timer ====================
+
 function updateTime() {
 	const timeElement = document.querySelector('[data-testid="test-user-time"]');
 	if (timeElement) {
@@ -7,6 +9,8 @@ function updateTime() {
 
 updateTime();
 setInterval(updateTime, 1000);
+
+// ==================== Theme Switcher ====================
 
 const switcher = document.getElementById("theme-switcher");
 
